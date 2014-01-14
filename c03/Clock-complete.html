@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시계</title>
+<style>
+* {
+  text-align: center;
+  font-size: 1.2em;
+}
+</style>
+<script>
+var clock;
+function show() {
+  var date = new Date();
+  var time = date.getHours() + ':' + date.getMinutes() + ':' +date.getSeconds();
+  clock.innerHTML = time;
+  setTimeout(show, 500);
+}
+window.onload = function() {
+  clock = document.getElementById("clock");
+  show();
+}
+</script>
+</head>
+<body>
+<h1>시계</h1>
+<div id="clock"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>카운터</title>
+<style>
+* {
+  text-align: center;
+  font-size: 1.2em;
+}
+</style>
+<script>
+var counter;
+function countUp() {
+  counter.innerHTML = parseInt(counter.innerHTML) + 1;
+}
+function countDown() {
+  counter.innerHTML = parseInt(counter.innerHTML) - 1;
+}
+window.onload = function() {
+  counter = document.getElementById("counter");
+  var plusBtn = document.getElementById("plus");
+  var minusBtn = document.getElementById("minus");
+  if (plusBtn.addEventListener) {
+    plusBtn.addEventListener('click', countUp);
+    minusBtn.addEventListener('click', countDown);
+  } else {
+    plusBtn.attachEvent('onclick', countUp);
+    minusBtn.attachEvent('onclick', countDown);
+  }
+}
+</script>
+</head>
+<body>
+<h1>카운터</h1>
+<div id="counter">1</div>
+<button id="plus">더하기</button>
+<button id="minus">빼기</button>
+</body>
+</html>

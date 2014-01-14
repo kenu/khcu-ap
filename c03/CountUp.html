@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>카운터</title>
+<style>
+* {
+  text-align: center;
+  font-size: 1.2em;
+}
+</style>
+</head>
+<body>
+<h1>카운터</h1>
+<div id="counter">1</div>
+<button onclick="countUp()">더하기</button>
+<button onclick="countDown()">빼기</button>
+<script>
+var counter = document.getElementById("counter");
+function countUp() {
+  counter.innerHTML = parseInt(counter.innerHTML) + 1;
+}
+</script>
+</body>
+</html>
