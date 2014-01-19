@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단</title>
+<link rel="stylesheet" href="TimesTable3.css">
+<script src="jquery-1.10.2.min.js"></script>
+<script>
+var html = '';
+for (var i = 2; i <= 9; i++) {
+	html += '<div>' + sub(i) + '</div>';
+}
+
+function sub(i) {
+    var string = '';
+    for (var j = 1; j <= 9; j++) {
+        string += i + ' * ' + j + ' = ' + i * j  + '<br>';
+    }
+	return string;
+}
+
+$(function() {
+    $("#result").html(html);
+});
+
+function show() {
+    var i = $("#unit").val();
+	var string = "<div>" + sub(parseInt(i)) + "</div>";
+	$("#result").html(string);
+}
+</script>
+</head>
+<body>
+<h1>구구단</h1>
+<div id="result"></div>
+<input type="text" id="unit" value="3">
+<button onclick="show()">show</button>
+</body>
+</html>
