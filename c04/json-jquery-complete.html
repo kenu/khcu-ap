@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON</title>
+<script src="jquery-1.10.2.min.js"></script>
+<style>
+* {
+  text-align: center;
+  font-size: 1.2em;
+}
+</style>
+<script>
+function callback(data) { 
+  if (data.channel.item) {
+    console.log(data.channel.item);	
+	show(data.channel.item);
+  } else { 
+    console.log(data);
+  }	
+}
+
+function show(items) {
+  var html = '';
+  for(var i = 0; i < items.length; i++) {
+    html += '<img src="' + items[i].thumbnail + '">'
+  }
+  $('#thumbnails').html(html);
+}
+
+function search() {
+  $.ajax({
+    url: "http://apis.daum.net/search/image",
+	data: {
+	"apikey":"DAUM_SEARCH_DEMO_APIKEY",
+	"output":"json",
+	"q":$("#q").val()
+	},
+	dataType: "jsonp",
+	success: callback
+  });
+}
+
+$(function() {
+  search();
+  $("#btn").on('click', search);
+  $("#q").on('keyup', function(e){if(e.keyCode === 13) {search()};});
+});
+</script>
+</head>
+<body>
+<h1>JSON 데이터</h1>
+<input type="text" id="q" value="nature">
+<button id="btn">search</button>
+<div id="thumbnails"></div>
+</body>
+</html>
