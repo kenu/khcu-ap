@@ -1,0 +1,9 @@
+div div {
+  width: 80px;
+  border : 1px solid blue;
+  background-color : #edf;
+  display : inline-block;
+  padding : 16px;
+  margin : 10px;
+  border-radius : 5px;
+}
