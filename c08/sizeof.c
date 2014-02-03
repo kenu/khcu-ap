@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-int main2()
+int main()
 {
    printf("Storage size for int : %d \n", sizeof(int));
    printf("max int : %d \n", INT_MAX);

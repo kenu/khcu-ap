@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int maina()
 {
 	int cat[10]; 
 	int nums[] = {1, 3, 5, 7};
